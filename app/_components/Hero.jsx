@@ -1,35 +1,38 @@
 import { Button } from '@nextui-org/react'
 import Image from 'next/image'
-import React from 'react'
+import backgroundImage from '../_assets/kansas-city-bg.jpg'
+import Avatar from '../_assets/Duct-Daddy-01.png'
 
 export default function Hero() {
     return (
-        <div className="container mx-auto px-4 py-16">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-                <div className="md:w-1/2 text-center md:text-left">
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-                        Affordable and Dependable Duct Cleaning Services
-                    </h1>
-                    <p className="text-lg md:text-xl mb-8">
-                        Based in Kansas City and Surrounding Areas
-                    </p>
-                    <Button color="primary" size='lg'>
-                        Request Quote
-                    </Button>
-                    {/* <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg">
-                        Request Quote
-                    </button> */}
-                </div>
-                <div className="md:w-1/2 mt-8 md:mt-0">
+        <>
+            <section className='relative py-20 md:py-28 lg:py-36 flex items-center justify-center'>
+                <div className='absolute h-full z-[-1]'>
                     <Image
-                        src="/kansas-city-bg.jpg"
-                        alt="Hero Image"
-                        width={800}
-                        height={600}
-                        className="rounded-lg shadow-lg"
+                        src={backgroundImage}
+                        alt="Background image"
+                        className='object-cover h-full filter brightness-50'
+                        priority
                     />
                 </div>
-            </div>
-        </div>
+                <div className='text-center text-white px-6'>
+                    <div className='flex justify-center'>
+                        <Image
+                            src={Avatar}
+                            alt='Duct Daddy Avatar'
+                            className='w-auto h-72 md:h-80 lg:h-96'
+                        />
+                    </div>
+                    <h1 className='text-4xl font-bold'>Affordable and Dependable Duct Cleaning Services</h1>
+                    <p className='text-lg font-light mt-4'>Based in Kansas City and Surrounding Areas</p>
+                    <div className='flex flex-col md:flex-row items-center justify-center mt-4'>
+                        <Button color='primary' size='lg'>
+                            Request Quote!
+                        </Button>
+                    </div>
+                </div>
+            </section>
+        </>
+
     )
 }

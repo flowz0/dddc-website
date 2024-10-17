@@ -1,34 +1,23 @@
-import { Button, Image } from '@nextui-org/react'
-import React from 'react'
+import Article from './Article'
 
 export default function About() {
     return (
-        <div className="container mx-auto px-4 py-16">
-            <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
-                <div className="md:w-1/2 mt-8 md:mt-0">
-                    <Image
-                        src="/kansas-city-bg.jpg"
-                        alt="Hero Image"
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-cover rounded-lg shadow-lg"
-                    />
-                </div>
-                <div className="md:w-2/3 text-center md:text-left md:mx-2">
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-                        Family-operated business based in Oak Grove, Missouri
-                    </h1>
-                    <p className="text-lg md:text-xl mb-8">
-                        Welcome to Duct Daddy Duct Cleaning! We are a local, family-operated business based in Oak Grove, Missouri, dedicated to providing top-notch residential air duct and dryer vent cleaning services. At Duct Daddy, we understand the importance of maintaining a clean and healthy home environment, which is why we strive to offer the best service possible to our community.
-                    </p>
-                    <Button color="primary" size='lg'>
-                        Request Quote
-                    </Button>
-                    {/* <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg">
-                        Request Quote
-                    </button> */}
-                </div>
-            </div>
-        </div>
+        <>
+            <section className='container mx-auto flex flex-col gap-y-16'>
+                <Article
+                    title={"Family-operated business based in Oak Grove, Missouri"}
+                    desc={"Welcome to Duct Daddy Duct Cleaning! We are a local, family-operated business based in Oak Grove, Missouri, dedicated to providing top-notch residential air duct and dryer vent cleaning services. At Duct Daddy, we understand the importance of maintaining a clean and healthy home environment, which is why we strive to offer the best service possible to our community."}
+                // image=''
+                />
+                <Article
+                    title={"Our team is equipped with the industry's top-of-the-line equipment"}
+                    desc={"Our team is equipped with the industry's top-of-the-line equipment to ensure your air ducts and dryer vents are thoroughly cleaned and free of contaminants. By using the latest technology and techniques, we guarantee improved air quality, increased HVAC efficiency, and enhanced safety in your home."}
+                />
+                <Article
+                    title={"Our family values extend to our business operations"}
+                    desc={"At Duct Daddy Duct Cleaning, we take pride in our commitment to excellence and customer satisfaction. Our family values extend to our business operations, ensuring that every job is completed with care, integrity, and a personal touch. We believe in building long-lasting relationships with our clients, treating each home as if it were our own."}
+                />
+            </section>
+        </>
     )
 }

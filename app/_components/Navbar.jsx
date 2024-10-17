@@ -1,7 +1,8 @@
 'use client';
 import { useState } from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react";
-import {AcmeLogo} from "./AcmeLogo.jsx";
+import Image from "next/image";
+import DDDCLogo from '../_assets/DDDC-logo.png'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,15 +15,19 @@ export default function NavbarComponent() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+    <Navbar className="bg-gray-100 md:h-24" onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent className="">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
+          <Image 
+            src={DDDCLogo}
+            alt="DDDC Logo"
+            className="object-fit w-44 h-auto md:h-full"
+          />
+          <span className="font-bold text-inherit hidden">Duct Daddy Duct Cleaning</span>
         </NavbarBrand>
       </NavbarContent>
 
@@ -50,14 +55,14 @@ export default function NavbarComponent() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="pt-4">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
             //   color={
             //     index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
             //   }
-              className="w-full"
+              className="w-full text-gray-100"
               href="#"
               size="lg"
             >
